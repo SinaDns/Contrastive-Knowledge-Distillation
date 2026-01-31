@@ -13,10 +13,12 @@ This project implements a **Knowledge Distillation** framework using **Contrasti
 - **Student Model:** `setu4993/smaller-LaBSE`. A smaller, efficient multilingual model finetuned to match the teacher's embedding space.
 
 ### 2. Contrastive Loss (CLIP)
-We alignment the student's Persian text embeddings with the teacher's English text embeddings using a symmetric cross-entropy loss over the similarity matrix.
+We align the student's Persian text embeddings with the teacher's English text embeddings using a symmetric cross-entropy loss over the similarity matrix.
+
 $$
-\text{Loss} = \frac{1}{2N} \sum_{i=1}^{N} (\log \frac{\exp(s_{ii}/\tau)}{\sum_j \exp(s_{ij}/\tau)} + \log \frac{\exp(s_{ii}/\tau)}{\sum_j \exp(s_{ji}/\tau)})
+\text{Loss} = \frac{1}{2N} \sum_{i=1}^{N} \left(\log \frac{\exp(s_{ii}/\tau)}{\sum_j \exp(s_{ij}/\tau)} + \log \frac{\exp(s_{ii}/\tau)}{\sum_j \exp(s_{ji}/\tau)}\right)
 $$
+
 Where $s_{ij}$ is the cosine similarity between the $i$-th candidate and $j$-th reference, scaled by temperature $\tau$.
 
 ## Dataset

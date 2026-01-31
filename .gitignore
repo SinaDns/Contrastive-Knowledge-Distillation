@@ -4,3 +4,4 @@ __pycache__
 train.csv
 val.csv
 best-model.pth
+*.pdf
