@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+__pycache__
+*.pyc
+train.csv
+val.csv
+best-model.pth
